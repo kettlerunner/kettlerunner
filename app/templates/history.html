@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2>Trade History</h2>
+  <table>
+    <thead><tr><th>Time</th><th>Symbol</th><th>Side</th><th>Qty</th><th>Price</th><th>Status</th></tr></thead>
+    <tbody>
+      {% for t in trades %}
+      <tr>
+        <td>{{ t.timestamp }}</td>
+        <td>{{ t.symbol }}</td>
+        <td>{{ t.side }}</td>
+        <td>{{ t.quantity }}</td>
+        <td>{{ t.price or "-" }}</td>
+        <td>{{ t.status }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

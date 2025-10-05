@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2>Open Positions</h2>
+  <table>
+    <thead><tr><th>Symbol</th><th>Qty</th><th>Avg Price</th><th>Last</th><th>P/L</th></tr></thead>
+    <tbody>
+      {% for p in positions %}
+      <tr>
+        <td>{{ p.symbol }}</td>
+        <td>{{ p.quantity }}</td>
+        <td>{{ "%.2f"|format(p.avg_price) }}</td>
+        <td>{{ "%.2f"|format(p.last) if p.last is not none else "-" }}</td>
+        <td>{{ "%.2f"|format(p.unrealized_pl) }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

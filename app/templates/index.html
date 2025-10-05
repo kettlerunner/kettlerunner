@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2>Welcome</h2>
+  <p>This portal publishes selected read-only data to the public and keeps execution tools behind a password.</p>
+  <ul>
+    <li>See <a href="/positions">current open positions</a></li>
+    <li>See <a href="/history">trade history</a></li>
+    <li>Admin tools at <code>/admin</code> (Basic Auth)</li>
+  </ul>
+</div>
+{% endblock %}

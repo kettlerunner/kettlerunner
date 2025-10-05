@@ -1,0 +1,9 @@
+[Unit]
+Description=Run strategy once
+
+[Service]
+Type=oneshot
+User=kettlerunner
+WorkingDirectory=/opt/kettlerunner
+EnvironmentFile=/opt/kettlerunner/.env
+ExecStart=/opt/kettlerunner/venv/bin/python -m scripts.run_jobs

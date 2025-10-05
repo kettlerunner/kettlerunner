@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2>Curated News</h2>
+  <table>
+    <thead><tr><th>Time</th><th>Title</th><th>Source</th></tr></thead>
+    <tbody>
+      {% for n in items %}
+      <tr>
+        <td>{{ n.time }}</td>
+        <td>{{ n.title }}</td>
+        <td>{{ n.source }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
